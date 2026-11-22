@@ -1,56 +1,63 @@
-# Project Title
+# Genomic AI Benchmark
 
-[![GitHub license](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE) [![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)](./CONTRIBUTING.md)
+An independent, reproducible observatory for evaluating genomic foundation models, conventional sequence baselines, biological generalization, and potential sequence overlap.
 
-One-line description of what this project does and who it's for.
+## What it includes
 
-## Features
+This project provides a runnable local research demo: a Next.js App Router shell, a FastAPI JSON API, SQLite metadata/results, a synthetic sequence fixture, a leave-one-species-out 3-mer baseline, split validation, bounded NCBI accession retrieval, and an interactive workspace. The Evo 2 adapter follows the upstream score/embedding interfaces, but real model inference has not been verified. The demo does not provide biological evidence.
 
-- Feature one
-- Feature two
-- Feature three
+## Run locally
 
-## Getting Started
-
-### Prerequisites
-
-List anything the user needs to have installed before they can use this project.
-
-### Installation
+Requires Python 3.11 or newer, Node.js 20.19 or newer with Corepack, pnpm 12.3.4, and a modern browser. Install the dependency locks once:
 
 ```bash
-# Clone the repository
-git clone https://github.com/username/repo-name.git
-cd repo-name
-
-# Install dependencies
-# add your install command here
+python3 -m venv .venv
+.venv/bin/pip install -r requirements.lock
+pnpm --dir apps/web install --frozen-lockfile
 ```
 
-### Usage
+Start the API and web app in separate terminals:
 
 ```bash
-# Add your run command here
+.venv/bin/uvicorn services.api.main:app --app-dir . --host 127.0.0.1 --port 8000
+pnpm --dir apps/web run dev
 ```
 
-## Contributing
+Open <http://127.0.0.1:3000>. The API uses <http://127.0.0.1:8000> and creates `data/benchmark.sqlite3` on first start. Set `GAB_DATABASE` to change the database location. To use the optional NCBI accession importer, export a contact address as `GAB_NCBI_EMAIL` before starting Uvicorn.
 
-We'd love to accept your patches and contributions to this project. There are just a few guidelines you need to follow.
+The UI identifies its seeded records as synthetic fixtures. “Embedding Atlas” displays a deterministic projection of simple sequence composition features, not a model embedding. Baseline metrics are computed from the fixture on request. Imported FASTA records are stored as user supplied, unlabeled records and are excluded from the fixture evaluation until a future metadata workflow assigns split and labels.
 
-### [Code of Conduct](./CODE_OF_CONDUCT.md)
+## Checks
 
-This project follows the [Contributor Covenant](https://www.contributor-covenant.org/) as its Code of Conduct, and we expect all project participants to adhere to it. Kindly read the [full guide](./CODE_OF_CONDUCT.md) to understand what actions will not be tolerated.
+Install Python test/lint dependencies with `.venv/bin/pip install -r requirements-dev.lock`.
 
-### [Contributing Guide](./CONTRIBUTING.md)
+```bash
+.venv/bin/pytest
+.venv/bin/ruff check research services/api
+.venv/bin/ruff format --check research services/api
+pnpm --dir apps/web run build
+pnpm --dir apps/web run typecheck
+pnpm --dir apps/web run lint
+```
 
-Read our [contributing guide](./CONTRIBUTING.md) to learn about our development process, how to propose bug fixes and improvements, and how to build and test your changes to the project.
+## API
 
-### Issues
+- `GET /api/health`, `/api/overview`, `/api/models`, `/api/datasets`, `/api/sequences`, `/api/runs`, `/api/splits/validate`
+- `POST /api/evaluate` runs the fixture-only grouped baseline.
+- `POST /api/leakage` scans the loaded split-labelled records for exact, reverse-complement and containment matches.
+- `POST /api/import/fasta` accepts JSON `{ "name": "...", "fasta": ">id\\nACGT" }`.
+- `POST /api/import/ncbi` retrieves a single versioned accession after `GAB_NCBI_EMAIL` is configured.
 
-Feel free to submit issues and enhancement requests. Use the template provided when creating an issue to ensure your request is clear and actionable.
+## Documentation
 
-See the open issues for a complete list of proposed features (and known issues).
+See [getting started](docs/getting-started.md), [architecture](docs/architecture.md), [benchmark methodology](docs/benchmark-methodology.md), [leakage detection](docs/leakage-detection.md), [limitations](docs/limitations.md), and the other topic guides in `docs/`.
 
-## [License](./LICENSE)
+The fixture computations also run from the command line: `.venv/bin/python -m research.cli evaluate --output artifacts/demo-evaluation.json` (also `leakage` and `validate-split`). Each output carries a manifest with fixture digest, runtime, and result.
 
-This project is licensed under the [MIT License](./LICENSE), meaning that you're free to modify, distribute, and/or use it for any commercial or private project.
+## Scope and limitations
+
+This release is a local research demo. It does not provide PostgreSQL, versioned migrations, a worker queue, broad public dataset ingestion, verified model inference, genome annotations, or a broad set of scientific tasks and reports. Outputs are not biological evidence. See [limitations](docs/limitations.md) for details.
+
+## License
+
+MIT. See [LICENSE](LICENSE).

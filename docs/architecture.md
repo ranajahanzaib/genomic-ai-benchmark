@@ -1,0 +1,7 @@
+# Architecture
+
+The application has five boundaries: `apps/web` is a Next.js App Router shell serving the responsive browser workspace in `public/`; `services/api/main.py` exposes FastAPI routes and validation; `services/api/app.py` handles SQLite persistence and fixture seeding; `services/api/providers` contains bounded remote data retrieval; `research/` contains HTTP-independent science, model adapters, and CLI workflows. SQLite stores model and dataset metadata, sequences, and run results. `schema.sql` defines the idempotent schema. The API seeds `fixtures/demo.json` on first start.
+
+The science helpers are callable Python functions and do not depend on HTTP handlers. `research.cli` executes the same fixture computations and writes a result manifest. Current computation includes strict FASTA parsing, reverse complements, a 3-mer count nearest-centroid classifier with leave-one-species-out folds, class metrics, species-cluster bootstrap intervals only when enough groups are present, declared split checks, and exact/reverse-complement/containment scans. The projection in the browser is a simple deterministic visualization of composition-like features.
+
+The application does not include SQLAlchemy/Alembic, PostgreSQL, queue workers, object storage, shared schemas, or production authentication. The server is intended for local single-user use. See [limitations](limitations.md) for scope and constraints.

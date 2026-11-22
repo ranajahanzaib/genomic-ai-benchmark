@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Genomic AI Benchmark — Research Observatory</title>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+
+  <body>
+    <div class="shell">
+      <aside class="rail"><a class="brand" href="#overview"><span class="mark">G</span><span>GENOMIC<br><b>AI
+              BENCHMARK</b></span></a>
+        <div class="nav-label">OBSERVATORY</div>
+        <nav id="nav"><a class="active" href="#overview">◉ <span>Overview</span></a><a href="#models">⌘ <span>Model
+              observatory</span></a><a href="#benchmarks">▦ <span>Benchmark explorer</span></a><a href="#embeddings">◌
+            <span>Embedding atlas</span></a><a href="#genome">⌁ <span>Genome browser</span></a><a href="#leakage">⌕
+            <span>Leakage inspector</span></a><a href="#datasets">▤ <span>Dataset registry</span></a><a href="#runs">◷
+            <span>Experiment runs</span></a></nav>
+        <div class="rail-bottom"><span class="pulse"></span> LOCAL WORKSPACE<br><small>CPU · demonstration data</small>
+        </div>
+      </aside>
+      <main>
+        <header>
+          <div class="crumb">Research workspace <span>/</span> <b id="crumb">Overview</b></div>
+          <div class="header-right"><span class="badge"><i></i> API CONNECTED</span><button id="theme" class="icon-btn"
+              title="Toggle dark theme">◐</button><button class="avatar">RJ</button></div>
+        </header>
+        <section class="view active" id="overview">
+          <div class="hero">
+            <div>
+              <div class="eyebrow"><span>INDEPENDENT RESEARCH OBSERVATORY</span><span class="line"></span> VOL. 01</div>
+              <h1>What does a genome<br>model <em>actually learn?</em></h1>
+              <p>Measure biological generalization, inspect representations, investigate potential sequence overlap, and
+                compare model claims with reproducible evidence.</p>
+              <div class="actions"><a class="button primary" href="#benchmarks">Explore evaluation <b>↗</b></a><a
+                  class="button secondary" href="#models">Model registry <span>→</span></a></div>
+            </div>
+            <div class="hero-stamp">
+              <div class="stamp-top">GAB <span>·</span> FIELD NOTE 001</div>
+              <div class="helix" aria-hidden="true">╲╱╲╱╲<br>╱╲╱╲╱<br>╲╱╲╱╲<br>╱╲╱╲╱</div>
+              <div class="stamp-bottom">SEQUENCE · SIGNAL · GENERALIZATION</div>
+            </div>
+          </div>
+          <div class="notice"><span class="notice-icon">i</span>
+            <div><b>Demonstration workspace</b><span>All currently seeded sequences are synthetic fixtures. Results
+                exercise the pipeline and are not biological evidence.</span></div><span class="status-tag">FIXTURE
+              DATA</span>
+          </div>
+          <div class="stats">
+            <div><span>REGISTERED MODELS</span><strong id="s-models">—</strong><small>1 adapter boundary ·
+                unavailable</small></div>
+            <div><span>DATASETS</span><strong id="s-datasets">—</strong><small>synthetic fixture included</small></div>
+            <div><span>SEQUENCES</span><strong id="s-sequences">—</strong><small>local records in workspace</small>
+            </div>
+            <div><span>EXPERIMENT RUNS</span><strong id="s-runs">—</strong><small>persisted in local SQLite</small>
+            </div>
+          </div>
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">01 / REPRESENTATION SPACE</div>
+              <h2>Sequence landscape <small>· fixture projection</small></h2>
+            </div>
+            <div class="control-row"><select id="colorby" aria-label="Color points by">
+                <option>Color by: label</option>
+                <option>Color by: species</option>
+              </select><button class="small-btn" id="reset-points">Reset view ↺</button></div>
+          </div>
+          <div class="analysis-grid">
+            <article class="plot-panel">
+              <div class="panel-top">
+                <div><b>k-mer composition map</b><span class="muted">Deterministic 2D projection of toy sequence
+                    features</span></div><span class="mono muted">n = <span id="point-count">8</span></span>
+              </div><canvas id="plot" aria-label="Synthetic sequence feature projection"></canvas>
+              <div class="plot-foot">
+                <div class="legend"><span><i class="dot blue"></i> motif present</span><span><i class="dot coral"></i>
+                    motif absent</span></div><span class="muted">Select a point to inspect its record</span>
+              </div>
+            </article>
+            <article class="side-panel">
+              <div class="panel-top">
+                <div><b>Evaluation snapshot</b><span class="muted">Grouped baseline · leave-one-species-out</span></div>
+                <span class="mini-icon">↗</span>
+              </div>
+              <div id="eval-summary" class="empty-chart"><span class="empty-glyph">▥</span>
+                <p>No evaluation run yet</p><button class="text-button" data-action="evaluate">Run baseline →</button>
+              </div>
+              <div class="side-rule"></div>
+              <div class="panel-top">
+                <div><b>Leakage scan</b><span class="muted">Exact · reverse complement · containment</span></div>
+              </div>
+              <div class="leak-mini"><span class="leak-count" id="leak-count">—</span><span>cross-split exact
+                  overlaps<br><small>within fixture corpus only</small></span><button class="arrow-button"
+                  data-action="leakage">→</button></div>
+            </article>
+          </div>
+          <div class="bottom-grid">
+            <article class="table-panel">
+              <div class="section-head compact">
+                <div>
+                  <div class="eyebrow">02 / MODEL REGISTRY</div>
+                  <h2>Model observatory</h2>
+                </div><a href="#models" class="text-button">View registry →</a>
+              </div>
+              <div id="model-table"></div>
+            </article>
+            <article class="table-panel">
+              <div class="section-head compact">
+                <div>
+                  <div class="eyebrow">03 / PROVENANCE</div>
+                  <h2>Dataset registry</h2>
+                </div><a href="#datasets" class="text-button">View datasets →</a>
+              </div>
+              <div id="dataset-table"></div>
+            </article>
+          </div>
+        </section>
+        <section class="view" id="models">
+          <div class="page-title">
+            <div class="eyebrow">OBSERVATORY / MODEL REGISTRY</div>
+            <h1>Model observatory</h1>
+            <p>Track capabilities and evidence separately. An adapter is only operational after inference is verified.
+            </p>
+          </div>
+          <div id="models-detail"></div>
+        </section>
+        <section class="view" id="benchmarks">
+          <div class="page-title">
+            <div class="eyebrow">EVALUATION / BASELINES</div>
+            <h1>Benchmark explorer</h1>
+            <p>Run a leave-one-species-out k-mer baseline on the explicitly synthetic fixture, then inspect individual
+              held-out predictions.</p>
+          </div>
+          <div class="notice"><span class="notice-icon">!</span>
+            <div><b>Fixture evaluation only</b><span>No genome model inference or real biological benchmark is included
+                in this local demo.</span></div>
+          </div><button class="button primary run-btn" data-action="evaluate">Run grouped baseline <b>→</b></button>
+          <button class="button secondary run-btn" data-action="validate">Validate declared splits <b>↗</b></button>
+          <div id="split-detail" class="result"></div>
+          <div id="eval-detail" class="result"></div>
+        </section>
+        <section class="view" id="embeddings">
+          <div class="page-title">
+            <div class="eyebrow">VISUALIZATION / FEATURE SPACE</div>
+            <h1>Embedding atlas</h1>
+            <p>This fixture view plots simple sequence composition features. It is not a model embedding and does not
+              imply biological clustering.</p>
+          </div>
+          <div class="plot-panel large">
+            <div class="panel-top"><b>Sequence feature projection <span class="tag">SYNTHETIC</span></b><span
+                class="mono">8 records</span></div><canvas class="big-plot" id="plot2"></canvas>
+            <div id="selected" class="selection-info">Select any point to see sequence metadata.</div>
+          </div>
+        </section>
+        <section class="view" id="genome">
+          <div class="page-title">
+            <div class="eyebrow">VISUALIZATION / SEQUENCE VIEWER</div>
+            <h1>Genome browser</h1>
+            <p>Inspect a selected fixture sequence and its nucleotide coordinates. No reference genome or annotation
+              tracks are loaded.</p>
+          </div>
+          <article class="sequence-panel">
+            <div class="panel-top"><b id="seq-name">Select a sequence from the atlas</b><span class="mono"
+                id="seq-length">—</span></div>
+            <div class="seq-ruler" id="seq-ruler"></div>
+            <div class="bases" id="bases">Choose a point in Overview or Embedding Atlas to render the sequence.</div>
+            <div class="track"><span>Sequence</span>
+              <div class="trackbar"></div>
+            </div>
+            <div class="track"><span>Annotations</span>
+              <div class="annotation-empty">No annotations supplied</div>
+            </div>
+          </article>
+        </section>
+        <section class="view" id="leakage">
+          <div class="page-title">
+            <div class="eyebrow">AUDIT / CORPUS-LIMITED</div>
+            <h1>Leakage inspector</h1>
+            <p>Find exact, reverse-complement, and containment matches across declared splits. A negative result cannot
+              establish that pretraining exposure did not occur.</p>
+          </div><button class="button primary run-btn" data-action="leakage">Run fixture audit <b>→</b></button>
+          <div class="coverage"><b>Corpus coverage</b><span>All 8 sequences in the local synthetic fixture. No external
+              pretraining corpus indexed.</span></div>
+          <div id="leak-detail" class="result"></div>
+        </section>
+        <section class="view" id="datasets">
+          <div class="page-title">
+            <div class="eyebrow">DATA / PROVENANCE REGISTRY</div>
+            <h1>Dataset registry</h1>
+            <p>Import local FASTA records, retrieve a versioned NCBI nucleotide accession, or inspect the bundled
+              fixture. Imported sequences remain unlabeled until metadata is supplied.</p>
+          </div>
+          <div class="import-box"><label for="dataset-name">Dataset name</label><input id="dataset-name"
+              value="My FASTA import"><label for="fasta">FASTA file contents</label><textarea id="fasta"
+              placeholder=">record_1&#10;ACGTACGT..."></textarea><button class="button primary" id="import-btn">Validate
+              & import FASTA →</button><span id="import-message"></span></div>
+          <div class="import-box ncbi-box"><b>NCBI Nucleotide</b><label for="ncbi-accession">Versioned
+              accession</label><input id="ncbi-accession" placeholder="NC_000913.3"><button class="button secondary"
+              id="ncbi-import-btn">Retrieve public record →</button><span id="ncbi-message">Configure GAB_NCBI_EMAIL on
+              the API to enable retrieval.</span></div>
+          <div id="dataset-detail"></div>
+        </section>
+        <section class="view" id="runs">
+          <div class="page-title">
+            <div class="eyebrow">WORKSPACE / REPRODUCIBILITY</div>
+            <h1>Experiment runs</h1>
+            <p>Every run is stored locally with its result payload and status.</p>
+          </div>
+          <div id="run-table"></div>
+        </section>
+        <footer>GENOMIC AI BENCHMARK <span>LOCAL CPU WORKSPACE</span><span>Research software · evidence before
+            claims</span></footer>
+      </main>
+    </div>
+    <script src="/app.js"></script>
+  </body>
+
+</html>

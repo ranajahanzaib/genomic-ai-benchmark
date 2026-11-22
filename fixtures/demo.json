@@ -1,0 +1,16 @@
+{
+  "id": "synthetic-promoter-demo-v1",
+  "name": "Synthetic promoter motif demonstration",
+  "source": "generated local fixture; not biological evidence",
+  "description": "Deterministic toy sequences for exercising the grouped baseline and leakage views. Motif labels are synthetic.",
+  "samples": [
+    {"id":"demo-a1","species":"species-a","split":"train","label":"motif-present","sequence":"ACGTTATAATGCGTACCTGA"},
+    {"id":"demo-a2","species":"species-a","split":"train","label":"motif-absent","sequence":"ACGCGGCCATCGTACCTGAA"},
+    {"id":"demo-b1","species":"species-b","split":"test","label":"motif-present","sequence":"GGGATATAATCCGATGCAAA"},
+    {"id":"demo-b2","species":"species-b","split":"test","label":"motif-absent","sequence":"TTGCGGCCATACGCTTACGA"},
+    {"id":"demo-c1","species":"species-c","split":"test","label":"motif-present","sequence":"CCTGTATAATAGCTCGATAC"},
+    {"id":"demo-c2","species":"species-c","split":"test","label":"motif-absent","sequence":"ATCCGGCCATGATCGGCTAA"},
+    {"id":"demo-leak-train","species":"species-d","split":"train","label":"motif-absent","sequence":"GATCCGTAACGGTAGCTTCA"},
+    {"id":"demo-leak-test","species":"species-e","split":"test","label":"motif-absent","sequence":"GATCCGTAACGGTAGCTTCA"}
+  ]
+}

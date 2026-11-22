@@ -6,21 +6,25 @@ labels: bug
 assignees: ''
 ---
 
-**Describe the bug**
-A clear and concise description of what the bug is.
+## Description
 
-**To Reproduce**
-Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. See error
+Describe the observed problem and include any error messages.
 
-**Expected behavior**
-A clear and concise description of what you expected to happen.
+## Steps to reproduce
 
-**Environment**
-- OS: [e.g. macOS 26.4.1, Windows 11, Ubuntu 24.04.4]
-- Version: [e.g. 1.0.0]
+1. Describe the first step.
 
-**Additional context**
-Add any other context or screenshots here.
+## Expected behavior
+
+Describe what you expected to happen.
+
+## Environment
+
+- Operating system:
+- Python version:
+- Node.js version:
+- Commit or release:
+
+## Additional context
+
+Add relevant logs or screenshots. Remove access tokens, private data, and sensitive sequence data before posting.

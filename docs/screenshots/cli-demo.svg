@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 620" width="860" height="620">
+  <defs>
+    <style>
+      .bg { fill: #0d1117; }
+      .bar { fill: #161b22; }
+      .title { fill: #8b949e; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; font-size: 13px; font-weight: 500; text-anchor: middle; }
+      .prompt-user { fill: #58a6ff; font-weight: 600; }
+      .prompt-path { fill: #7ee787; font-weight: 600; }
+      .prompt-cmd { fill: #f0f6fc; }
+      .t-key { fill: #79c0ff; }
+      .t-str { fill: #a5d6ff; }
+      .t-num { fill: #79c0ff; }
+      .t-bool { fill: #ff7b72; }
+      .t-null { fill: #8b949e; }
+      .t-punct { fill: #8b949e; }
+      .t-comment { fill: #8b949e; font-style: italic; }
+      .t-text { fill: #c9d1d9; }
+      text { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; font-size: 12.5px; }
+    </style>
+  </defs>
+
+  <!-- Window Frame -->
+  <rect class="bg" x="0" y="0" width="860" height="620" rx="10" stroke="#30363d" stroke-width="1.5"/>
+  <path class="bar" d="M0 10 C0 4.477 4.477 0 10 0 L850 0 C855.523 0 860 4.477 860 10 L860 38 L0 38 Z" stroke="#30363d" stroke-width="1.5"/>
+  <line x1="0" y1="38" x2="860" y2="38" stroke="#30363d" stroke-width="1"/>
+
+  <!-- Window Controls -->
+  <circle cx="20" cy="19" r="6" fill="#ff5f56" stroke="#e0443e" stroke-width="0.5"/>
+  <circle cx="40" cy="19" r="6" fill="#ffbd2e" stroke="#dea123" stroke-width="0.5"/>
+  <circle cx="60" cy="19" r="6" fill="#27c93f" stroke="#1aab29" stroke-width="0.5"/>
+  <text class="title" x="430" y="24">gab-cli — python -m research.cli evaluate</text>
+
+  <!-- Terminal Content -->
+  <g transform="translate(24, 64)">
+    <!-- Command Line -->
+    <text y="0">
+      <tspan class="prompt-user">rj@observatory</tspan><tspan class="t-punct">:</tspan><tspan class="prompt-path">~/genomic-ai-benchmark</tspan><tspan class="t-punct">$ </tspan><tspan class="prompt-cmd">.venv/bin/python -m research.cli evaluate</tspan>
+    </text>
+
+    <!-- Output JSON -->
+    <text y="22"><tspan class="t-punct">{</tspan></text>
+    <text y="40">  <tspan class="t-key">"command"</tspan><tspan class="t-punct">: </tspan><tspan class="t-str">"evaluate"</tspan><tspan class="t-punct">,</tspan></text>
+    <text y="58">  <tspan class="t-key">"fixture_id"</tspan><tspan class="t-punct">: </tspan><tspan class="t-str">"synthetic-promoter-demo-v1"</tspan><tspan class="t-punct">,</tspan></text>
+    <text y="76">  <tspan class="t-key">"fixture_sha256"</tspan><tspan class="t-punct">: </tspan><tspan class="t-str">"374ed6d04f34827259e0db3d3f9da41f57969b2df4b7a22f04695058e1441b07"</tspan><tspan class="t-punct">,</tspan></text>
+    <text y="94">  <tspan class="t-key">"manifest_version"</tspan><tspan class="t-punct">: </tspan><tspan class="t-num">1</tspan><tspan class="t-punct">,</tspan></text>
+    <text y="112">  <tspan class="t-key">"python"</tspan><tspan class="t-punct">: </tspan><tspan class="t-str">"3.14.3"</tspan><tspan class="t-punct">,</tspan></text>
+    <text y="130">  <tspan class="t-key">"result"</tspan><tspan class="t-punct">: {</tspan></text>
+    <text y="148">    <tspan class="t-key">"accuracy"</tspan><tspan class="t-punct">: </tspan><tspan class="t-num">1.0</tspan><tspan class="t-punct">,</tspan></text>
+    <text y="166">    <tspan class="t-key">"accuracy_cluster_bootstrap_95"</tspan><tspan class="t-punct">: </tspan><tspan class="t-null">null</tspan><tspan class="t-punct">,</tspan></text>
+    <text y="184">    <tspan class="t-key">"balanced_accuracy"</tspan><tspan class="t-punct">: </tspan><tspan class="t-num">1.0</tspan><tspan class="t-punct">,</tspan></text>
+    <text y="202">    <tspan class="t-key">"data_status"</tspan><tspan class="t-punct">: </tspan><tspan class="t-str">"synthetic fixture"</tspan><tspan class="t-punct">,</tspan></text>
+    <text y="220">    <tspan class="t-key">"macro_f1"</tspan><tspan class="t-punct">: </tspan><tspan class="t-num">1.0</tspan><tspan class="t-punct">,</tspan></text>
+    <text y="238">    <tspan class="t-key">"method"</tspan><tspan class="t-punct">: </tspan><tspan class="t-str">"3-mer count nearest centroid"</tspan><tspan class="t-punct">,</tspan></text>
+    <text y="256">    <tspan class="t-key">"n"</tspan><tspan class="t-punct">: </tspan><tspan class="t-num">8</tspan><tspan class="t-punct">,</tspan></text>
+    <text y="274">    <tspan class="t-key">"split"</tspan><tspan class="t-punct">: </tspan><tspan class="t-str">"leave-one-species-out"</tspan><tspan class="t-punct">,</tspan></text>
+    <text y="292">    <tspan class="t-key">"status"</tspan><tspan class="t-punct">: </tspan><tspan class="t-str">"completed"</tspan><tspan class="t-punct">,</tspan></text>
+    <text y="310">    <tspan class="t-key">"uncertainty_note"</tspan><tspan class="t-punct">: </tspan><tspan class="t-str">"Cluster bootstrap is not estimated with fewer than 10 held-out species..."</tspan><tspan class="t-punct">,</tspan></text>
+    <text y="328">    <tspan class="t-key">"predictions"</tspan><tspan class="t-punct">: [</tspan></text>
+    <text y="346">      <tspan class="t-punct">{ </tspan><tspan class="t-key">"id"</tspan><tspan class="t-punct">: </tspan><tspan class="t-str">"demo-a1"</tspan><tspan class="t-punct">, </tspan><tspan class="t-key">"species"</tspan><tspan class="t-punct">: </tspan><tspan class="t-str">"species-a"</tspan><tspan class="t-punct">, </tspan><tspan class="t-key">"truth"</tspan><tspan class="t-punct">: </tspan><tspan class="t-str">"motif-present"</tspan><tspan class="t-punct">, </tspan><tspan class="t-key">"prediction"</tspan><tspan class="t-punct">: </tspan><tspan class="t-str">"motif-present"</tspan><tspan class="t-punct"> },</tspan></text>
+    <text y="364">      <tspan class="t-punct">{ </tspan><tspan class="t-key">"id"</tspan><tspan class="t-punct">: </tspan><tspan class="t-str">"demo-a2"</tspan><tspan class="t-punct">, </tspan><tspan class="t-key">"species"</tspan><tspan class="t-punct">: </tspan><tspan class="t-str">"species-a"</tspan><tspan class="t-punct">, </tspan><tspan class="t-key">"truth"</tspan><tspan class="t-punct">: </tspan><tspan class="t-str">"motif-absent"</tspan><tspan class="t-punct">, </tspan><tspan class="t-key">"prediction"</tspan><tspan class="t-punct">: </tspan><tspan class="t-str">"motif-absent"</tspan><tspan class="t-punct"> },</tspan></text>
+    <text y="382">      <tspan class="t-punct">{ </tspan><tspan class="t-key">"id"</tspan><tspan class="t-punct">: </tspan><tspan class="t-str">"demo-b1"</tspan><tspan class="t-punct">, </tspan><tspan class="t-key">"species"</tspan><tspan class="t-punct">: </tspan><tspan class="t-str">"species-b"</tspan><tspan class="t-punct">, </tspan><tspan class="t-key">"truth"</tspan><tspan class="t-punct">: </tspan><tspan class="t-str">"motif-present"</tspan><tspan class="t-punct">, </tspan><tspan class="t-key">"prediction"</tspan><tspan class="t-punct">: </tspan><tspan class="t-str">"motif-present"</tspan><tspan class="t-punct"> },</tspan></text>
+    <text y="400">      <tspan class="t-comment">... 5 more held-out evaluation predictions ...</tspan></text>
+    <text y="418">    <tspan class="t-punct">]</tspan></text>
+    <text y="436">  <tspan class="t-punct">}</tspan></text>
+    <text y="454"><tspan class="t-punct">}</tspan></text>
+
+    <!-- Next Command Prompt -->
+    <text y="488">
+      <tspan class="prompt-user">rj@observatory</tspan><tspan class="t-punct">:</tspan><tspan class="prompt-path">~/genomic-ai-benchmark</tspan><tspan class="t-punct">$ </tspan><tspan class="prompt-cmd">.venv/bin/python -m research.cli leakage</tspan>
+    </text>
+    <text y="508"><tspan class="t-text"># Detected cross-split overlap: demo-leak-train (train) == demo-leak-test (test) [exact]</tspan></text>
+    <text y="528">
+      <tspan class="prompt-user">rj@observatory</tspan><tspan class="t-punct">:</tspan><tspan class="prompt-path">~/genomic-ai-benchmark</tspan><tspan class="t-punct">$ </tspan><tspan class="t-punct">█</tspan>
+    </text>
+  </g>
+</svg>

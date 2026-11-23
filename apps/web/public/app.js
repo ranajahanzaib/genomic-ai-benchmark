@@ -112,9 +112,10 @@ function draw() {
       ctx.lineTo(w - 8, y);
       ctx.stroke();
     }
-    ctx.fillStyle = "#87918f";
-    ctx.font = "9px DM Mono";
-    ctx.fillText("GC fraction →", w - 93, h - 5);
+    const isDark = document.body.classList.contains("dark");
+    ctx.fillStyle = isDark ? "#a4b0b5" : "#6c7882";
+    ctx.font = "11px 'DM Mono', monospace";
+    ctx.fillText("GC fraction →", w - 105, h - 6);
     projection.forEach((p, i) => {
       let x = pad + p.x * (w - 2 * pad),
         y = h - pad - p.y * (h - 2 * pad);
@@ -123,16 +124,16 @@ function draw() {
       ctx.beginPath();
       ctx.arc(x, y, s === selected ? 7 : 5, 0, Math.PI * 2);
       ctx.fillStyle = bySpecies
-        ? ["#4576cb", "#d77b63", "#34856c", "#b18b49", "#8069b4"][i % 5]
+        ? ["#588ff2", "#eb886f", "#42ba92", "#ce9e49", "#a084e6"][i % 5]
         : s.label === "motif-present"
-          ? "#4576cb"
-          : "#dc8a71";
-      ctx.globalAlpha = 0.83;
+          ? "#588ff2"
+          : "#ea967f";
+      ctx.globalAlpha = 0.88;
       ctx.fill();
       ctx.globalAlpha = 1;
       if (s === selected) {
-        ctx.strokeStyle = "#202a39";
-        ctx.lineWidth = 2;
+        ctx.strokeStyle = isDark ? "#ffffff" : "#202a39";
+        ctx.lineWidth = 2.5;
         ctx.stroke();
       }
     });
@@ -300,7 +301,10 @@ $("#ncbi-import-btn").onclick = async () => {
     $("#ncbi-message").textContent = "Retrieval error: " + e.message;
   }
 };
-$("#theme").onclick = () => document.body.classList.toggle("dark");
+$("#theme").onclick = () => {
+  document.body.classList.toggle("dark");
+  draw();
+};
 $("#colorby").onchange = draw;
 $("#reset-points").onclick = () => {
   selected = null;

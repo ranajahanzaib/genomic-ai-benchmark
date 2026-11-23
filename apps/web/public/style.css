@@ -43,7 +43,7 @@ body {
   gap: 10px;
   text-decoration: none;
   color: var(--ink);
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 0.1em;
   line-height: 1.35;
   margin: 0 0 45px 8px;
@@ -65,7 +65,7 @@ body {
 .nav-label,
 .eyebrow {
   font:
-    500 9px "DM Mono",
+    600 11px "DM Mono",
     monospace;
   letter-spacing: 0.14em;
   color: #858c8a;
@@ -86,7 +86,7 @@ body {
   border-radius: 6px;
   text-decoration: none;
   color: #68717a;
-  font-size: 12px;
+  font-size: 13px;
 }
 .rail nav a:first-letter {
   font-size: 15px;
@@ -104,12 +104,12 @@ body {
   padding: 12px 10px;
   color: #67727c;
   font:
-    9px "DM Mono",
+    11px "DM Mono",
     monospace;
-  line-height: 1.8;
+  line-height: 1.7;
 }
 .rail-bottom small {
-  font: 10px "DM Sans";
+  font: 12px "DM Sans", sans-serif;
   color: #909894;
 }
 .pulse {
@@ -136,7 +136,7 @@ header {
 }
 .crumb {
   color: #858b8f;
-  font-size: 11px;
+  font-size: 12px;
 }
 .crumb span {
   padding: 0 8px;
@@ -152,7 +152,7 @@ header {
   gap: 15px;
 }
 .badge {
-  font: 9px "DM Mono";
+  font: 11px "DM Mono", monospace;
   letter-spacing: 0.06em;
   color: #697872;
 }
@@ -177,7 +177,8 @@ header {
 .avatar {
   background: #e9eddf;
   border: 0;
-  font-size: 9px;
+  font-size: 11px;
+  font-weight: 600;
 }
 .view {
   display: none;
@@ -229,7 +230,7 @@ header {
 }
 .hero p,
 .page-title p {
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.6;
   color: #687178;
   max-width: 560px;
@@ -249,7 +250,7 @@ header {
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  font: 600 11px "DM Sans";
+  font: 600 12px "DM Sans", sans-serif;
   cursor: pointer;
 }
 .primary {
@@ -285,7 +286,7 @@ header {
   position: absolute;
   left: 13px;
   color: #829188;
-  font: 8px "DM Mono";
+  font: 10px "DM Mono", monospace;
   letter-spacing: 0.08em;
 }
 .stamp-top {
@@ -296,7 +297,7 @@ header {
 }
 .stamp-bottom {
   bottom: 12px;
-  font-size: 7px;
+  font-size: 10px;
 }
 .helix {
   font: 30px/1.1 "DM Mono";
@@ -323,7 +324,7 @@ header {
   color: #986b32;
   display: grid;
   place-items: center;
-  font: 11px Georgia;
+  font: 12px Georgia, serif;
 }
 .notice div {
   display: grid;
@@ -331,16 +332,16 @@ header {
   flex: 1;
 }
 .notice b {
-  font-size: 11px;
+  font-size: 13px;
   color: #66573f;
 }
 .notice div span {
-  font-size: 10px;
+  font-size: 12px;
   color: #8a7d65;
 }
 .status-tag,
 .tag {
-  font: 8px "DM Mono";
+  font: 10px "DM Mono", monospace;
   letter-spacing: 0.07em;
   padding: 4px 6px;
   background: #efe8d9;
@@ -365,7 +366,7 @@ header {
   border: 0;
 }
 .stats span {
-  font: 8px "DM Mono";
+  font: 11px "DM Mono", monospace;
   letter-spacing: 0.1em;
   color: #87918f;
 }
@@ -374,7 +375,7 @@ header {
   letter-spacing: -0.04em;
 }
 .stats small {
-  font-size: 9px;
+  font-size: 12px;
   color: #8e9695;
 }
 .section-head {
@@ -390,7 +391,7 @@ header {
   margin: 5px 0 0;
 }
 .section-head h2 small {
-  font: 10px "DM Sans";
+  font: 12px "DM Sans", sans-serif;
   font-weight: 400;
   color: #8a9293;
   letter-spacing: 0;
@@ -401,13 +402,13 @@ header {
 }
 .control-row select,
 .small-btn {
-  height: 27px;
+  height: 29px;
   border: 1px solid var(--line);
   border-radius: 4px;
   background: white;
   padding: 0 8px;
   color: #667077;
-  font: 9px "DM Sans";
+  font: 12px "DM Sans", sans-serif;
 }
 .analysis-grid {
   display: grid;
@@ -436,15 +437,15 @@ header {
   gap: 4px;
 }
 .panel-top b {
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 600;
 }
 .muted {
-  font-size: 9px;
+  font-size: 11px;
   color: #8a9395;
 }
 .mono {
-  font: 9px "DM Mono";
+  font: 11px "DM Mono", monospace;
   color: #7c8588;
 }
 .plot-panel canvas {
@@ -463,7 +464,7 @@ header {
 .legend {
   display: flex;
   gap: 13px;
-  font-size: 9px;
+  font-size: 11px;
   color: #707a80;
 }
 .dot {
@@ -498,14 +499,14 @@ header {
   color: #b8c4d8;
 }
 .empty-chart p {
-  font-size: 10px;
+  font-size: 12px;
   margin: 4px;
 }
 .text-button {
   border: 0;
   background: none;
   color: var(--blue);
-  font-size: 9px;
+  font-size: 12px;
   text-decoration: none;
   cursor: pointer;
   padding: 0;
@@ -519,7 +520,7 @@ header {
   align-items: center;
   gap: 12px;
   padding: 12px 2px 2px;
-  font-size: 10px;
+  font-size: 12px;
   color: #626c72;
   line-height: 1.4;
 }
@@ -529,7 +530,7 @@ header {
 }
 .leak-mini small {
   color: #969d9d;
-  font-size: 8px;
+  font-size: 11px;
 }
 .arrow-button {
   margin-left: auto;
@@ -554,17 +555,17 @@ header {
   margin-bottom: 10px;
 }
 .compact h2 {
-  font-size: 14px;
+  font-size: 15px;
 }
 .data-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 9px;
+  font-size: 12px;
 }
 .data-table th {
   text-align: left;
   color: #939b9a;
-  font: 8px "DM Mono";
+  font: 600 11px "DM Mono", monospace;
   letter-spacing: 0.07em;
   padding: 8px 6px;
   border-bottom: 1px solid var(--line);
@@ -578,8 +579,8 @@ header {
   border: 0;
 }
 .pill {
-  font: 8px "DM Mono";
-  padding: 3px 5px;
+  font: 11px "DM Mono", monospace;
+  padding: 3px 6px;
   border-radius: 3px;
   background: #eef1ee;
   color: #627268;
@@ -596,7 +597,7 @@ header {
   margin: 10px 0 6px;
 }
 .page-title p {
-  font-size: 12px;
+  font-size: 14px;
 }
 .run-btn {
   margin: 8px 0 16px;
@@ -630,7 +631,7 @@ header {
   border: 1px solid var(--line);
   background: #fff;
   border-radius: 4px;
-  font-size: 11px;
+  font-size: 12px;
   margin: 12px 0;
   color: #717a7b;
 }
@@ -646,7 +647,7 @@ header {
 .selection-info {
   border-top: 1px solid var(--line);
   padding: 10px 0 0;
-  font-size: 10px;
+  font-size: 12px;
   color: #7e878a;
 }
 .sequence-panel {
@@ -655,12 +656,12 @@ header {
 }
 .seq-ruler {
   margin-top: 25px;
-  font: 9px "DM Mono";
+  font: 11px "DM Mono", monospace;
   color: #858e90;
   word-spacing: 15px;
 }
 .bases {
-  font: 13px/2 "DM Mono";
+  font: 14px/2.2 "DM Mono", monospace;
   letter-spacing: 0.15em;
   word-break: break-all;
   margin: 7px 0 24px;
@@ -683,7 +684,7 @@ header {
   align-items: center;
   height: 32px;
   border-top: 1px solid var(--line);
-  font-size: 9px;
+  font-size: 12px;
   color: #7e888b;
 }
 .trackbar {
@@ -699,7 +700,7 @@ header {
 }
 .annotation-empty {
   color: #a3aaa9;
-  font-size: 9px;
+  font-size: 12px;
 }
 .import-box {
   background: white;
@@ -711,7 +712,7 @@ header {
   border-radius: 5px;
 }
 .import-box label {
-  font-size: 10px;
+  font-size: 12px;
   color: #657078;
 }
 .import-box input,
@@ -719,7 +720,7 @@ header {
   border: 1px solid var(--line);
   border-radius: 4px;
   padding: 9px;
-  font: 11px "DM Mono";
+  font: 13px "DM Mono", monospace;
   color: var(--ink);
   background: #fcfcfa;
 }
@@ -738,30 +739,30 @@ footer {
   display: flex;
   gap: 25px;
   color: #8a9292;
-  font: 8px "DM Mono";
+  font: 11px "DM Mono", monospace;
   letter-spacing: 0.06em;
 }
 footer span:last-child {
   margin-left: auto;
 }
 .dark {
-  --bg: #171b20;
-  --paper: #20262c;
-  --ink: #e3e7e8;
-  --muted: #a0aaad;
-  --line: #343c42;
-  --blue-pale: #293958;
-  --shadow: none;
+  --bg: #12161a;
+  --paper: #1c2228;
+  --ink: #e8ecf0;
+  --muted: #a4b0b5;
+  --line: #2e3740;
+  --blue-pale: #22324f;
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 .dark .rail {
-  background: #1c2227;
+  background: #161b20;
 }
 .dark .crumb b,
 .dark .rail nav a {
-  color: #bbc3c5;
+  color: #d2d9dc;
 }
 .dark .rail nav a.active {
-  background: #293958;
+  background: #253858;
   color: #b4cbff;
 }
 .dark .stats,
@@ -780,23 +781,69 @@ footer span:last-child {
   color: var(--ink);
 }
 .dark .notice {
-  background: #302b21;
+  background: #28241b;
   border-color: #51432e;
 }
 .dark .notice b {
-  color: #dec69a;
+  color: #f0d5a8;
 }
 .dark .notice div span {
-  color: #b8a783;
+  color: #cbbba0;
+}
+.dark .data-table th {
+  color: #a4b0b5;
 }
 .dark .data-table td,
 .dark .section-head h2,
 .dark .panel-top b {
   color: var(--ink);
 }
+.dark .data-table td {
+  border-bottom-color: #263038;
+}
 .dark .plot-foot {
   border-color: var(--line);
 }
+.dark .pill {
+  background: #28333c;
+  color: #a8beca;
+}
+.dark .pill.warn {
+  background: #3b3022;
+  color: #dfb268;
+}
+.dark .base-a {
+  color: #4cd49e;
+}
+.dark .base-c {
+  color: #79a8f7;
+}
+.dark .base-g {
+  color: #e8b056;
+}
+.dark .base-t {
+  color: #f77e74;
+}
+.dark .arrow-button {
+  background: #29384c;
+  color: #8bb3f8;
+}
+.dark .hero-stamp {
+  background: #1d252b;
+  border-color: #2b363e;
+  color: #7ba895;
+}
+.dark .stamp-top,
+.dark .stamp-bottom {
+  color: #8da498;
+}
+.dark .import-box input,
+.dark .import-box textarea {
+  background: #171c22;
+  border-color: var(--line);
+  color: var(--ink);
+}
+
 @media (max-width: 1000px) {
   main {
     padding: 0 23px;

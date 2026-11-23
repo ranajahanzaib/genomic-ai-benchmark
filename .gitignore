@@ -28,6 +28,7 @@ artifacts/
 .DS_Store
 .idea/
 .vscode/
+apps/web/AGENTS.md
 
 # Local project brief
 PLAN.md
